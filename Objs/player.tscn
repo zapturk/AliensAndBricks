@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcvoqv3sppk5p"]
+
+[ext_resource type="Script" path="res://Objs/player.gd" id="1_0otiy"]
+[ext_resource type="Texture2D" uid="uid://c5iev6poc7moi" path="res://Assets/Player/Bar/Bar Normal/bar_normal.png" id="1_rnqvt"]
+[ext_resource type="Shader" path="res://Shader/drop_shadow.gdshader" id="3_ja8g8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dt33c"]
+shader = ExtResource("3_ja8g8")
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.227451)
+shader_parameter/offset_in_pixels = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_630jw"]
+size = Vector2(60, 16)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_0otiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_rnqvt")
+
+[node name="DropDown" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_dt33c")
+position = Vector2(2, 2)
+texture = ExtResource("1_rnqvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_630jw")
