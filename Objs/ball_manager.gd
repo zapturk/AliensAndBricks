@@ -2,9 +2,11 @@ extends Node2D
 
 const BALLLIMIT := 10
 
-@onready var ballCount = 0
+@onready var ballCount = -1
 
 var ball = preload("res://Objs/ball.tscn")
+
+signal NoBallsLeft
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +15,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if ballCount == 0:
+		NoBallsLeft.emit()
 
 func CreateBall():
 	if ballCount < BALLLIMIT:
