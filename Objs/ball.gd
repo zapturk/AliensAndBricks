@@ -18,11 +18,16 @@ func _physics_process(delta):
 		if collisionObj:
 			var objHit = collisionObj.get_collider()
 			
+			#print(objHit.get_groups())
+			
 			if objHit.is_in_group("Player"):
 				# so this make the ball go left if it lands on the left side of the bat or vice versa
 				velocity = velocity.from_angle(Vector2(player.position.x, player.position.y).angle_to_point(Vector2(position.x, position.y)))
 				if speed < maxSpeed:
 					speed += 10
+			elif objHit.is_in_group("Brick"):
+				velocity = velocity.bounce(collisionObj.get_normal())
+				objHit.OnHit()
 			else:
 				velocity = velocity.bounce(collisionObj.get_normal())
 			

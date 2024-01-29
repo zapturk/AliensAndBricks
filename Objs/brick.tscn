@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://blf4pdey6jjxy"]
+
+[ext_resource type="Script" path="res://Objs/brick.gd" id="1_mxc40"]
+[ext_resource type="Texture2D" uid="uid://syci4d12csom" path="res://Assets/Bricks 8x8/regularBrick.png" id="1_orism"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwqpt"]
+atlas = ExtResource("1_orism")
+region = Rect2(48, 8, 16, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph6tn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwqpt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ox3"]
+size = Vector2(32, 16)
+
+[node name="Brick" type="StaticBody2D" groups=["Brick"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_mxc40")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ph6tn")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i1ox3")

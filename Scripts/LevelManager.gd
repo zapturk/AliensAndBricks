@@ -22,6 +22,7 @@ func _on_ball_manager_no_balls_left():
 
 func _on_brick_manager_no_bricks_left():
 	# show level compealte
+	print("Level Compleat")
 	
 	# go to next level
-	SceneLoader.load_scene(NextLevel)
+	#SceneLoader.load_scene(NextLevel)

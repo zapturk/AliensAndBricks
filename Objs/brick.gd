@@ -1,17 +1,17 @@
-extends Node2D
+extends StaticBody2D
 
-@onready var numOfBrick = -1
-
-signal NoBricksLeft
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	numOfBrick = get_children().size()
+	pass
+
+func OnHit():
+	# deterim if it will drop a power up
 	
-	if numOfBrick == 0:
-		NoBricksLeft.emit()
+	# Destroy brick
+	queue_free()
