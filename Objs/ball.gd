@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Ball
 
 @onready var rng = RandomNumberGenerator.new()
 
@@ -30,23 +31,12 @@ func _physics_process(delta):
 				objHit.OnHit()
 			else:
 				velocity = velocity.bounce(collisionObj.get_normal())
-			
-			#match objHit.get_collision_layer():
-				#Global.outOfBoundsLayer:
-					##kill ball if falls out
-					#queue_free()
-				#Global.playerLayer:
-	##				# so this make the ball go left if it lands on the left side of the bat or vice versa
-					#velocity = velocity.from_angle(Vector2(player.position.x, player.position.y).angle_to_point(Vector2(position.x, position.y)))
-					#speed += 10
-				#Global.brickLayer:
-					#velocity = velocity.bounce(collisionObj.get_normal())
-					#objHit.destroyBrick() # delete brick
-				#_:
-					## build in bounce for any thing else
-					#velocity = velocity.bounce(collisionObj.get_normal())
 	else:
 		position.x = player.position.x
 		position.y = player.position.y - 16
 	if Input.is_action_pressed("ui_accept"):
 		inPlay = true
+
+func OutOfBounds():
+	# kill ball
+	queue_free()

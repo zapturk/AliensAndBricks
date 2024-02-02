@@ -17,7 +17,8 @@ func _on_ball_manager_no_balls_left():
 	
 	# if life is zero set game over
 	
-	pass # Replace with function body.
+	# else spawn new ball
+	$BallManager.CreateBall()
 
 
 func _on_brick_manager_no_bricks_left():

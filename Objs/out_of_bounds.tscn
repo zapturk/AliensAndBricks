@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3wawdwd6u3d"]
+
+[ext_resource type="Script" path="res://Objs/out_of_bounds.gd" id="1_xcu00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fwkj"]
+size = Vector2(640, 34)
+
+[node name="OutOfBounds" type="Area2D" groups=["OutOfBounds"]]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_xcu00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(320, 384)
+shape = SubResource("RectangleShape2D_5fwkj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

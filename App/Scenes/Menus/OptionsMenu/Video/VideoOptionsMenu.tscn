@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2numvphf2kau"]
+[gd_scene load_steps=4 format=3 uid="uid://b2numvphf2kau"]
 
 [ext_resource type="Script" path="res://App/Scenes/Menus/OptionsMenu/Video/VideoOptionsMenu.gd" id="1"]
 [ext_resource type="Script" path="res://App/Scripts/CaptureFocus.gd" id="2_dgrai"]
+[ext_resource type="FontFile" uid="uid://caed477efrcdq" path="res://Fonts/pocod.ttf" id="3_1use6"]
 
 [node name="Video" type="MarginContainer"]
 anchors_preset = 15
@@ -26,6 +27,8 @@ layout_mode = 2
 [node name="FullscreenLabel" type="Label" parent="VBoxContainer/FullscreenControl"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_1use6")
+theme_override_font_sizes/font_size = 10
 text = "Fullscreen :"
 
 [node name="FullscreenButton" type="CheckButton" parent="VBoxContainer/FullscreenControl"]
@@ -39,11 +42,15 @@ layout_mode = 2
 [node name="ResolutionLabel" type="Label" parent="VBoxContainer/ResolutionControl"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_1use6")
+theme_override_font_sizes/font_size = 10
 text = "Resolution :"
 
 [node name="ResolutionOptions" type="OptionButton" parent="VBoxContainer/ResolutionControl"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1use6")
+theme_override_font_sizes/font_size = 10
 
 [connection signal="toggled" from="VBoxContainer/FullscreenControl/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="item_selected" from="VBoxContainer/ResolutionControl/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]

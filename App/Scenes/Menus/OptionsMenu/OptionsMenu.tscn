@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://vh1ucj2rfbby"]
+[gd_scene load_steps=5 format=3 uid="uid://vh1ucj2rfbby"]
 
 [ext_resource type="Script" path="res://App/Scenes/Menus/OptionsMenu/OptionsMenu.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bosy6wwf0vleq" path="res://App/Scenes/Menus/OptionsMenu/Audio/AudioControl/AudioControl.tscn" id="2_xrxr1"]
 [ext_resource type="Script" path="res://App/Scripts/CaptureFocus.gd" id="3_xfg0m"]
+[ext_resource type="FontFile" uid="uid://caed477efrcdq" path="res://Fonts/pocod.ttf" id="4_600eo"]
 
 [node name="OptionsMenu" type="VBoxContainer"]
 custom_minimum_size = Vector2(400, 260)
@@ -37,6 +38,8 @@ layout_mode = 2
 [node name="MuteLabel" type="Label" parent="MuteControl"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_600eo")
+theme_override_font_sizes/font_size = 10
 text = "Mute :"
 
 [node name="MuteButton" type="CheckButton" parent="MuteControl"]
@@ -49,6 +52,8 @@ layout_mode = 2
 [node name="FullscreenLabel" type="Label" parent="FullscreenControl"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_600eo")
+theme_override_font_sizes/font_size = 10
 text = "Fullscreen :"
 
 [node name="FullscreenButton" type="CheckButton" parent="FullscreenControl"]

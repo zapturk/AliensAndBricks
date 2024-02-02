@@ -12,12 +12,15 @@ signal NoBallsLeft
 func _ready():
 	CreateBall()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	ballCount = get_children().size()
+	
 	if ballCount == 0:
 		NoBallsLeft.emit()
+		ballCount = -1
 
 func CreateBall():
 	if ballCount < BALLLIMIT:
 		add_child(ball.instantiate())
+		ballCount = get_children().size()

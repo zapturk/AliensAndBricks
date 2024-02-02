@@ -36,6 +36,10 @@ script = ExtResource("2_wft4x")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/title_button_font = ExtResource("3_4caup")
+theme_override_fonts/font = ExtResource("3_4caup")
+theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/title_button_font_size = 10
 hide_root = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
