@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6qk0re0dmcsl"]
+
+[ext_resource type="Script" path="res://Objs/power_up.gd" id="1_0018g"]
+[ext_resource type="Texture2D" uid="uid://ctt1elhk3k3iv" path="res://Assets/Power Ups and Malus/hearts.png" id="2_jysit"]
+[ext_resource type="Texture2D" uid="uid://cbrsjfpofh62q" path="res://Assets/Power Ups and Malus/multiball.png" id="2_ntipv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mw3sj"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jysit")
+}],
+"loop": true,
+"name": &"heart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ntipv")
+}],
+"loop": true,
+"name": &"multiball",
+"speed": 5.0
+}]
+
+[node name="PowerUp" type="Node2D"]
+script = ExtResource("1_0018g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mw3sj")
+animation = &"multiball"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.8, 0.8)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

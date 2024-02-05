@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(body):
-	if body is Ball:
-		body.OutOfBounds()
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()

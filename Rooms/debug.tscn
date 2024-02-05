@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dx8ydxwnj8xdy"]
+[gd_scene load_steps=13 format=3 uid="uid://dx8ydxwnj8xdy"]
 
 [ext_resource type="Texture2D" uid="uid://c6vx28tg72j8t" path="res://Assets/HUD/label.png" id="1_0cgpm"]
 [ext_resource type="PackedScene" uid="uid://bcvoqv3sppk5p" path="res://Objs/player.tscn" id="1_n8e5w"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://r02xie8pn6nl" path="res://Assets/Background/Pipes.png" id="4_kmp6m"]
 [ext_resource type="PackedScene" uid="uid://bsw03yibphqcw" path="res://Objs/brick_manager.tscn" id="4_vrbjw"]
 [ext_resource type="PackedScene" uid="uid://blf4pdey6jjxy" path="res://Objs/brick.tscn" id="7_byq4r"]
-[ext_resource type="PackedScene" uid="uid://bp3wawdwd6u3d" path="res://Objs/out_of_bounds.tscn" id="9_tlhks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxo7f"]
 texture = ExtResource("2_d56qe")
@@ -974,8 +973,6 @@ position = Vector2(464, 96)
 [node name="Player" parent="." instance=ExtResource("1_n8e5w")]
 unique_name_in_owner = true
 position = Vector2(320, 336)
-
-[node name="OutOfBounds" parent="." instance=ExtResource("9_tlhks")]
 
 [connection signal="NoBallsLeft" from="BallManager" to="." method="_on_ball_manager_no_balls_left"]
 [connection signal="NoBricksLeft" from="BrickManager" to="." method="_on_brick_manager_no_bricks_left"]

@@ -15,6 +15,7 @@ func _ready():
 
 func _physics_process(delta):
 	if inPlay:
+		
 		var collisionObj = move_and_collide(velocity * speed * delta)
 		if collisionObj:
 			var objHit = collisionObj.get_collider()
@@ -37,6 +38,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_accept"):
 		inPlay = true
 
-func OutOfBounds():
-	# kill ball
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
