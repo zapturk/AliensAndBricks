@@ -14,6 +14,7 @@ func _process(_delta):
 
 func _on_ball_manager_no_balls_left():
 	# lose life
+	Global.lives -= 1
 	
 	# if life is zero set game over
 	

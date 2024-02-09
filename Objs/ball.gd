@@ -15,12 +15,9 @@ func _ready():
 
 func _physics_process(delta):
 	if inPlay:
-		
 		var collisionObj = move_and_collide(velocity * speed * delta)
 		if collisionObj:
 			var objHit = collisionObj.get_collider()
-			
-			#print(objHit.get_groups())
 			
 			if objHit.is_in_group("Player"):
 				# so this make the ball go left if it lands on the left side of the bat or vice versa

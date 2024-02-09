@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://tt74dt63vaf2"]
+
+[ext_resource type="FontFile" uid="uid://caed477efrcdq" path="res://Fonts/pocod.ttf" id="1_pnqio"]
+[ext_resource type="Script" path="res://Objs/LiveHolder.gd" id="1_w6faa"]
+[ext_resource type="Texture2D" uid="uid://bh1ldbh3c47yk" path="res://Assets/HUD/heart_icon.png" id="2_orgmv"]
+
+[node name="InGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pnqio")
+theme_override_font_sizes/font_size = 10
+text = "Lives:"
+
+[node name="LiveHolder" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 3
+script = ExtResource("1_w6faa")
+
+[node name="1" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")
+
+[node name="2" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")
+
+[node name="3" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")
+
+[node name="4" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")
+
+[node name="5" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")
+
+[node name="6" type="TextureRect" parent="VBoxContainer/LiveHolder"]
+layout_mode = 2
+texture = ExtResource("2_orgmv")

@@ -1,14 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6qk0re0dmcsl"]
+[gd_scene load_steps=12 format=3 uid="uid://c6qk0re0dmcsl"]
 
 [ext_resource type="Script" path="res://Objs/power_up.gd" id="1_0018g"]
 [ext_resource type="Texture2D" uid="uid://ctt1elhk3k3iv" path="res://Assets/Power Ups and Malus/hearts.png" id="2_jysit"]
 [ext_resource type="Texture2D" uid="uid://cbrsjfpofh62q" path="res://Assets/Power Ups and Malus/multiball.png" id="2_ntipv"]
+[ext_resource type="Texture2D" uid="uid://c4fwrl1kkgus8" path="res://Assets/Power Ups and Malus/big_bar.png" id="2_wuj1u"]
+[ext_resource type="Texture2D" uid="uid://en17xo2j6nlt" path="res://Assets/Power Ups and Malus/fast_ball.png" id="3_4i0lm"]
+[ext_resource type="Texture2D" uid="uid://cliucsteoywxx" path="res://Assets/Power Ups and Malus/magnet.png" id="5_2f28d"]
+[ext_resource type="Texture2D" uid="uid://d0fj688dm8h67" path="res://Assets/Power Ups and Malus/shield.png" id="7_iht5m"]
+[ext_resource type="Texture2D" uid="uid://uvq2oomkf1i0" path="res://Assets/Power Ups and Malus/slow_ball.png" id="8_k4wqp"]
+[ext_resource type="Texture2D" uid="uid://bh6lpa2tuefix" path="res://Assets/Power Ups and Malus/small_bar.png" id="9_x4at3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mw3sj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wuj1u")
+}],
+"loop": true,
+"name": &"bigbar",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4i0lm")
+}],
+"loop": true,
+"name": &"fastball",
 "speed": 5.0
 }, {
 "frames": [{
@@ -21,21 +43,64 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_2f28d")
+}],
+"loop": true,
+"name": &"magnet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_ntipv")
 }],
 "loop": true,
 "name": &"multiball",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_iht5m")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_k4wqp")
+}],
+"loop": true,
+"name": &"slowball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_x4at3")
+}],
+"loop": true,
+"name": &"smallbar",
+"speed": 5.0
 }]
 
-[node name="PowerUp" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6mrc"]
+size = Vector2(32, 32)
+
+[node name="PowerUp" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
 script = ExtResource("1_0018g")
+FallSpeed = 60.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mw3sj")
-animation = &"multiball"
+animation = &"heart"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.6, 1.6)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x6mrc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
