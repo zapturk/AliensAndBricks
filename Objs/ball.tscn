@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bntmjfvdsncex"]
+[gd_scene load_steps=20 format=3 uid="uid://bntmjfvdsncex"]
 
 [ext_resource type="Script" path="res://Objs/ball.gd" id="1_px7ku"]
 [ext_resource type="Texture2D" uid="uid://cj5oq5ot23msl" path="res://Assets/Player/Balls/ball_small_normal_big.png" id="2_h358j"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bdvmenxmmfpmq" path="res://Assets/Player/Balls/Slime Ball/slime_ball_2.png" id="9_jbg2w"]
 [ext_resource type="Texture2D" uid="uid://xw8bq6a08u4g" path="res://Assets/Player/Balls/Slime Ball/slime_ball_3.png" id="10_j517k"]
 [ext_resource type="Texture2D" uid="uid://dcr44x1wxlq52" path="res://Assets/Player/Balls/Slime Ball/slime_ball_4.png" id="11_qblf6"]
+[ext_resource type="Shader" path="res://Shader/drop_shadow.gdshader" id="15_cn6e5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4pb3"]
 atlas = ExtResource("2_h358j")
@@ -86,6 +87,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe5ys"]
+shader = ExtResource("15_cn6e5")
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.352941)
+shader_parameter/offset_in_pixels = Vector2(2.08165e-12, 2.08165e-12)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_omj60"]
 radius = 6.5192
 
@@ -100,10 +107,19 @@ sprite_frames = SubResource("SpriteFrames_bs5j3")
 animation = &"RegularNormal"
 autoplay = "RegularNormal"
 
+[node name="shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_fe5ys")
+texture = ExtResource("2_h358j")
+offset = Vector2(2, 2)
+hframes = 3
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_omj60")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

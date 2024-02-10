@@ -3,12 +3,13 @@ class_name Ball
 
 @onready var rng = RandomNumberGenerator.new()
 
-var speed: int = 95
+var speed: int = 135
 var maxSpeed: int = 245
 var inPlay: bool = false
 var player
 
 func _ready():
+	rng.randomize()
 	player = get_parent().get_parent().get_node("Player")
 	velocity.x = rng.randf_range(-.5, .5)
 	velocity.y = -1

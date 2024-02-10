@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcvoqv3sppk5p"]
+[gd_scene load_steps=6 format=3 uid="uid://bcvoqv3sppk5p"]
 
 [ext_resource type="Script" path="res://Objs/player.gd" id="1_0otiy"]
 [ext_resource type="Texture2D" uid="uid://c5iev6poc7moi" path="res://Assets/Player/Bar/Bar Normal/bar_normal.png" id="1_rnqvt"]
+[ext_resource type="Shader" path="res://Shader/drop_shadow.gdshader" id="3_22e1i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lnl5"]
+shader = ExtResource("3_22e1i")
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.352941)
+shader_parameter/offset_in_pixels = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_630jw"]
 size = Vector2(60, 16)
@@ -13,6 +20,12 @@ script = ExtResource("1_0otiy")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_rnqvt")
+
+[node name="shadow" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_7lnl5")
+texture = ExtResource("1_rnqvt")
+offset = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_630jw")

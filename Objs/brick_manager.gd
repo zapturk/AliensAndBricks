@@ -15,3 +15,6 @@ func _process(_delta):
 	
 	if numOfBrick == 0:
 		NoBricksLeft.emit()
+
+
+	

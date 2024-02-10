@@ -24,3 +24,24 @@ func CreateBall():
 	if ballCount < BALLLIMIT:
 		add_child(ball.instantiate())
 		ballCount = get_children().size()
+
+func multiball():
+	for ballIns in get_children():
+		var newBallX = ball.instantiate()
+		var newBallY = ball.instantiate()
+		
+		newBallX.inPlay = true
+		newBallY.inPlay = true
+		
+		newBallX.position = ballIns.position
+		newBallY.position = ballIns.position
+		
+		if get_child_count() < Global.ballLimit-1:
+			add_child(newBallX)
+			add_child(newBallY)
+			
+			newBallX.velocity.x = -ballIns.velocity.x
+			newBallX.velocity.y = ballIns.velocity.y
+			
+			newBallY.velocity.x = ballIns.velocity.x
+			newBallY.velocity.y = -ballIns.velocity.y
