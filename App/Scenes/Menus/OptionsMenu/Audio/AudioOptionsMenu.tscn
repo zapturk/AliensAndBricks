@@ -37,6 +37,7 @@ layout_mode = 2
 [node name="MuteLabel" type="Label" parent="VBoxContainer/MuteControl"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 text = "Mute :"
 
 [node name="MuteButton" type="CheckButton" parent="VBoxContainer/MuteControl"]

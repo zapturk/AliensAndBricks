@@ -10,6 +10,7 @@ script = ExtResource("1_caab0")
 [node name="BusLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 text = "Audio Bus :"
 
 [node name="BusHSlider" type="HSlider" parent="."]

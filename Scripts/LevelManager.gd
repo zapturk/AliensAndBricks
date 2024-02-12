@@ -1,6 +1,7 @@
 extends Node2D
 
 @export_file("*.tscn") var NextLevel : String
+@export_file("*.tscn") var MainMenu : String
 @export var LevelNumber := "0"
 @export var Name := "Debug"
 
@@ -21,9 +22,9 @@ func _on_ball_manager_no_balls_left():
 	# if life is zero set game over
 	if Global.lives < 0:
 		# go back to main menu
-		set_physics_process(false)
-		
-		SceneLoader.load_scene("res://App/Scenes/Menus/MainMenu/MainMenu.tscn")
+		pauseEverything()
+		$GameOver.add_theme_icon_override("close", Texture2D.new()) 
+		$GameOver.show()
 	else:
 		# else spawn new ball
 		$BallManager.CreateBall()
@@ -31,10 +32,21 @@ func _on_ball_manager_no_balls_left():
 
 func _on_brick_manager_no_bricks_left():
 	# show level compealte
-	print("Level Compleat")
+	pauseEverything()
+	$NextLevel.add_theme_icon_override("close", Texture2D.new()) 
+	$NextLevel.show()
 	
-	# go to next level
-	#SceneLoader.load_scene(NextLevel)
 
 func multiball():
 	$BallManager.multiball()
+
+func _on_next_level_confirmed():
+	SceneLoader.load_scene(NextLevel)
+
+func _on_game_over_confirmed():
+	SceneLoader.load_scene(MainMenu)
+
+func pauseEverything():
+	for ballIns in $BallManager.get_children():
+		ballIns.set_physics_process(false)
+	$Player.set_physics_process(false)

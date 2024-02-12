@@ -5,14 +5,19 @@ class_name Ball
 
 var speed: int = 135
 var maxSpeed: int = 245
-var inPlay: bool = false
-var player
+@export var inPlay: bool = false
+var playerIns
 
 func _ready():
 	rng.randomize()
-	player = get_parent().get_parent().get_node("Player")
-	velocity.x = rng.randf_range(-.5, .5)
-	velocity.y = -1
+	
+	if !inPlay:
+		playerIns = get_parent().get_parent().get_node("Player")
+	
+	# default direction the ball should go
+	if velocity == Vector2.ZERO:
+		velocity.x = rng.randf_range(-.5, .5)
+		velocity.y = -1
 
 func _physics_process(delta):
 	if inPlay:
@@ -22,7 +27,7 @@ func _physics_process(delta):
 			
 			if objHit.is_in_group("Player"):
 				# so this make the ball go left if it lands on the left side of the bat or vice versa
-				velocity = velocity.from_angle(Vector2(player.position.x, player.position.y).angle_to_point(Vector2(position.x, position.y)))
+				velocity = Vector2.from_angle(Vector2(playerIns.position.x, playerIns.position.y).angle_to_point(Vector2(position.x, position.y)))
 				if speed < maxSpeed:
 					speed += 10
 			elif objHit.is_in_group("Brick"):
@@ -31,8 +36,8 @@ func _physics_process(delta):
 			else:
 				velocity = velocity.bounce(collisionObj.get_normal())
 	else:
-		position.x = player.position.x
-		position.y = player.position.y - 16
+		position.x = playerIns.position.x
+		position.y = playerIns.position.y - 16
 	if Input.is_action_pressed("ui_accept"):
 		inPlay = true
 

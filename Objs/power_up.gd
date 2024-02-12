@@ -10,7 +10,7 @@ var chance = 0
 var powerupType = [
 	{"type": "heart", "chance": 2},
 	{"type": "multiball", "chance": 10},
-	{"type": "magnet", "chance": 5}
+	#{"type": "magnet", "chance": 5}
 ]
 
 # Called when the node enters the scene tree for the first time.

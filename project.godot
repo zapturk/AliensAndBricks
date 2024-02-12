@@ -14,7 +14,9 @@ config/name="Aliens & Bricks"
 config/version="0.0.1"
 run/main_scene="res://App/Scenes/InitApp/InitApp.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/HUD/alien_icon.png"
+config/macos_native_icon="res://Assets/HUD/alien_icon.icns"
+config/windows_native_icon="res://Assets/HUD/alien_icon.ico"
 
 [autoload]
 
@@ -37,6 +39,11 @@ project/assembly_name="Aliens & Bricks"
 [filesystem]
 
 import/blender/enabled=false
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+theme/custom_font="res://Fonts/YanaWIDE.ttf"
 
 [input]
 

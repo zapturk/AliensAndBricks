@@ -13,7 +13,7 @@ func _ready():
 	CreateBall()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	ballCount = get_children().size()
 	
 	if ballCount == 0:
@@ -36,12 +36,12 @@ func multiball():
 		newBallX.position = ballIns.position
 		newBallY.position = ballIns.position
 		
+		newBallX.velocity = ballIns.velocity.rotated(deg_to_rad(135))
+		newBallY.velocity = ballIns.velocity.rotated(deg_to_rad(-135))
+		
 		if get_child_count() < Global.ballLimit-1:
-			add_child(newBallX)
-			add_child(newBallY)
+			call_deferred("add_child", newBallX)
+			call_deferred("add_child",newBallY)
 			
-			newBallX.velocity.x = -ballIns.velocity.x
-			newBallX.velocity.y = ballIns.velocity.y
 			
-			newBallY.velocity.x = ballIns.velocity.x
-			newBallY.velocity.y = -ballIns.velocity.y
+			

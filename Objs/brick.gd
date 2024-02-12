@@ -15,7 +15,7 @@ func _process(_delta):
 
 func OnHit():
 	# deterim if it will drop a power up
-	if rng.randi_range(10, 10) == 10:
+	if rng.randi_range(1, 10) == 10:
 		var newPowerup = powerup.instantiate()
 		newPowerup.position = position
 		get_parent().get_parent().add_child(newPowerup)
