@@ -45,7 +45,7 @@ func _finished_animating():
 func _animate_images():
 	for texture_rect in %ImagesContainer.get_children():
 		texture_rect.show()
-		%AnimationPlayer.play("FadeInOut")
+		%AnimationPlayer.play("InOut")
 		await(%AnimationPlayer.animation_finished)
 		texture_rect.hide()
 	_finished_animating()
