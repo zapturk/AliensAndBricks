@@ -10,8 +10,9 @@ shader_parameter/background_color = Color(0, 0, 0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.352941)
 shader_parameter/offset_in_pixels = null
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_630jw"]
-size = Vector2(60, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52fku"]
+radius = 8.0
+height = 60.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -28,4 +29,5 @@ texture = ExtResource("1_rnqvt")
 offset = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_630jw")
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_52fku")

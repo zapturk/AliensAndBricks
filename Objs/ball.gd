@@ -21,13 +21,16 @@ func _ready():
 
 func _physics_process(delta):
 	if inPlay:
+		if velocity == Vector2.LEFT or velocity == Vector2.RIGHT:
+			velocity.y = -0.02
+		
 		var collisionObj = move_and_collide(velocity * speed * delta)
 		if collisionObj:
 			var objHit = collisionObj.get_collider()
 			
 			if objHit.is_in_group("Player"):
 				# so this make the ball go left if it lands on the left side of the bat or vice versa
-				velocity = Vector2.from_angle(Vector2(playerIns.position.x, playerIns.position.y).angle_to_point(Vector2(position.x, position.y)))
+				velocity = Vector2.from_angle(Vector2(objHit.position.x, objHit.position.y).angle_to_point(Vector2(position.x, position.y)))
 				if speed < maxSpeed:
 					speed += 10
 			elif objHit.is_in_group("Brick"):
