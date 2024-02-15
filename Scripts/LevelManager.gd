@@ -39,6 +39,12 @@ func _on_brick_manager_no_bricks_left():
 
 func multiball():
 	$BallManager.multiball()
+	
+func slowball():
+	$BallManager.slowball()
+	
+func fastball():
+	$BallManager.fastball()
 
 func _on_next_level_confirmed():
 	SceneLoader.load_scene(NextLevel)

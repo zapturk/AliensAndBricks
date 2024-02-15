@@ -3,8 +3,9 @@ class_name Ball
 
 @onready var rng = RandomNumberGenerator.new()
 
-var speed: int = 135
-var maxSpeed: int = 245
+@export var minSpeed: int = 125
+@export var maxSpeed: int = 325
+@export var speed: int = 175
 @export var inPlay: bool = false
 var playerIns
 

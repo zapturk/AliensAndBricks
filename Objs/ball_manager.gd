@@ -3,6 +3,7 @@ extends Node2D
 const BALLLIMIT := 10
 
 @onready var ballCount = -1
+@onready var speedChange := 60
 
 var ball = preload("res://Objs/ball.tscn")
 
@@ -25,6 +26,20 @@ func CreateBall():
 		add_child(ball.instantiate())
 		ballCount = get_children().size()
 
+func slowball():
+	for ballIns in get_children():
+		if ballIns.speed <= ballIns.minSpeed + speedChange:
+			ballIns.speed = ballIns.minSpeed
+		else:
+			ballIns.speed -= speedChange
+
+func fastball():
+	for ballIns in get_children():
+		if ballIns.speed >= ballIns.maxSpeed - speedChange:
+			ballIns.speed = ballIns.maxSpeed
+		else:
+			ballIns.speed += speedChange
+
 func multiball():
 	for ballIns in get_children():
 		var newBallX = ball.instantiate()
@@ -35,6 +50,9 @@ func multiball():
 		
 		newBallX.position = ballIns.position
 		newBallY.position = ballIns.position
+		
+		newBallX.speed = ballIns.speed
+		newBallY.speed = ballIns.speed
 		
 		newBallX.velocity = ballIns.velocity.rotated(deg_to_rad(135))
 		newBallY.velocity = ballIns.velocity.rotated(deg_to_rad(-135))

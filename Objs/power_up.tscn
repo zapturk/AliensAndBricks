@@ -94,7 +94,7 @@ FallSpeed = 60.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mw3sj")
-animation = &"slowball"
+animation = &"shield"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(1.6, 1.6)
