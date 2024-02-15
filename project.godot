@@ -23,6 +23,8 @@ config/windows_native_icon="res://Assets/HUD/alien_icon.ico"
 SceneLoader="*res://App/Scripts/SceneLoader.gd"
 RuntimeLogger="*res://Extras/Scripts/RuntimeLogger.gd"
 Global="*res://Scripts/Global.gd"
+Def="*res://Scripts/def.gd"
+Sound="*res://Scripts/sound.gd"
 
 [display]
 

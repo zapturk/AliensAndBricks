@@ -31,10 +31,12 @@ func _physics_process(delta):
 			
 			if objHit.is_in_group("Player"):
 				# so this make the ball go left if it lands on the left side of the bat or vice versa
+				Sound.play(Def.SFX.PlayerHit)
 				velocity = Vector2.from_angle(Vector2(objHit.position.x, objHit.position.y).angle_to_point(Vector2(position.x, position.y)))
 				if speed < maxSpeed:
 					speed += 10
 			elif objHit.is_in_group("Brick"):
+				Sound.play(Def.SFX.BrickHit)
 				velocity = velocity.bounce(collisionObj.get_normal())
 				objHit.OnHit()
 			else:

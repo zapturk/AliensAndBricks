@@ -35,7 +35,6 @@ func _on_brick_manager_no_bricks_left():
 	pauseEverything()
 	$NextLevel.add_theme_icon_override("close", Texture2D.new()) 
 	$NextLevel.show()
-	
 
 func multiball():
 	$BallManager.multiball()
