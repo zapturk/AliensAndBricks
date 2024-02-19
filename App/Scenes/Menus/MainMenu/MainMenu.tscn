@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=28 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://App/Scenes/Menus/MainMenu/MainMenu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bvwl11s2p0hd" path="res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn" id="2_ewwbc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://r02xie8pn6nl" path="res://Assets/Background/Pipes.png" id="5_3uo3v"]
 [ext_resource type="Script" path="res://App/Scripts/UISoundController.gd" id="6_bs342"]
 [ext_resource type="PackedScene" uid="uid://bntmjfvdsncex" path="res://Objs/ball.tscn" id="6_txl05"]
+[ext_resource type="AudioStream" uid="uid://carpdfns40043" path="res://Audio/Title.wav" id="10_wmcm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yabtq"]
 texture = ExtResource("4_58gan")
@@ -842,6 +843,10 @@ text = "Back"
 
 [node name="UISoundController" type="Node" parent="."]
 script = ExtResource("6_bs342")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wmcm8")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
