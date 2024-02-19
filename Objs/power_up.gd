@@ -8,10 +8,10 @@ var type = "default"
 var chance = 0
 
 var powerupType = [
-	{"type": "heart", "chance": 5},
+	#{"type": "heart", "chance": 5},
 	{"type": "multiball", "chance": 40},
-	{"type": "slowball", "chance": 80},
-	{"type": "fastball", "chance": 80}
+	#{"type": "slowball", "chance": 80},
+	#{"type": "fastball", "chance": 80}
 	#{"type": "magnet", "chance": 5}
 ]
 
