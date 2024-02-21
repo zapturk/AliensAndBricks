@@ -15,14 +15,14 @@ sfntRevision: 0x00010000
 LayerCount: 2
 Layer: 0 1 "Back" 1
 Layer: 1 1 "Fore" 0
-XUID: [1021 435 541130643 2255784]
+XUID: [1021 435 541130643 12064850]
 StyleMap: 0x0000
 FSType: 0
 OS2Version: 4
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1659792804
-ModificationTime: 1708448234
+ModificationTime: 1708448589
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -151,11 +151,11 @@ Flags: W
 LayerCount: 2
 Fore
 SplineSet
-300 800 m 1,0,-1
+300 800 m 5,0,-1
  300 200 l 1,1,-1
  100 200 l 1,2,-1
  100 800 l 1,3,-1
- 300 800 l 1,0,-1
+ 300 800 l 5,0,-1
 300 0 m 1,4,-1
  300 -200 l 1,5,-1
  100 -200 l 1,6,-1

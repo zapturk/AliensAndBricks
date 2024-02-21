@@ -9,6 +9,7 @@ const outOfBoundsLayer: int = 16
 @onready var CurrentLevel := "0"
 @onready var LevelName := "Debug"
 @onready var ballLimit := 10
+@onready var BricksLeft := -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

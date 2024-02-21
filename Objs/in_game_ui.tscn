@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://tt74dt63vaf2"]
+[gd_scene load_steps=8 format=3 uid="uid://tt74dt63vaf2"]
 
 [ext_resource type="Script" path="res://Objs/LevelLable.gd" id="1_77d2o"]
 [ext_resource type="FontFile" uid="uid://c1x2bq7pyps3o" path="res://Fonts/Yana.ttf" id="1_el71x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bh1ldbh3c47yk" path="res://Assets/HUD/heart_icon.png" id="2_orgmv"]
 [ext_resource type="Script" path="res://Objs/NameLable.gd" id="3_1ui06"]
 [ext_resource type="FontFile" uid="uid://cop0suxblaol2" path="res://Fonts/Yana5x5.ttf" id="3_dhumb"]
+[ext_resource type="Script" path="res://Objs/Bricks.gd" id="5_in58w"]
 
 [node name="InGameUI" type="Control"]
 layout_mode = 3
@@ -36,6 +37,14 @@ theme_override_fonts/font = ExtResource("3_dhumb")
 theme_override_font_sizes/font_size = 32
 text = "test"
 script = ExtResource("3_1ui06")
+
+[node name="Bricks" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_dhumb")
+theme_override_font_sizes/font_size = 32
+text = "Bricks: "
+script = ExtResource("5_in58w")
 
 [node name="Lives" type="Label" parent="VBoxContainer"]
 layout_mode = 2
