@@ -5,7 +5,7 @@ const BALLLIMIT := 10
 @onready var ballCount = -1
 @onready var speedChange := 60
 
-var ball = preload("res://Objs/ball.tscn")
+var ball = preload("res://Objs/Balls/ball.tscn")
 
 signal NoBallsLeft
 

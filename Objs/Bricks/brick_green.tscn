@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsicl8lmbdebt"]
+[gd_scene load_steps=12 format=3 uid="uid://bkowve1dx58r3"]
 
-[ext_resource type="Script" path="res://Objs/brick.gd" id="1_oeheg"]
-[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_vrufp"]
-[ext_resource type="Texture2D" uid="uid://syci4d12csom" path="res://Assets/Bricks 8x8/regularBrick.png" id="3_lnkvb"]
-[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_e62xi"]
+[ext_resource type="Script" path="res://Objs/Bricks/brick.gd" id="1_ranap"]
+[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_e541s"]
+[ext_resource type="Texture2D" uid="uid://syci4d12csom" path="res://Assets/Bricks 8x8/regularBrick.png" id="3_2g0l1"]
+[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_py6bd"]
 
 [sub_resource type="Animation" id="Animation_va1ax"]
 length = 0.001
@@ -58,18 +58,18 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ehk7"]
 resource_local_to_scene = true
-shader = ExtResource("2_vrufp")
+shader = ExtResource("2_e541s")
 shader_parameter/sensitivity = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_666g3"]
-atlas = ExtResource("3_lnkvb")
-region = Rect2(48, 0, 16, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7fex"]
+atlas = ExtResource("3_2g0l1")
+region = Rect2(16, 8, 16, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ph6tn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_666g3")
+"texture": SubResource("AtlasTexture_e7fex")
 }],
 "loop": true,
 "name": &"default",
@@ -79,10 +79,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ox3"]
 size = Vector2(32, 16)
 
-[node name="BrickPurple" type="StaticBody2D" groups=["Brick"]]
+[node name="BrickGreen" type="StaticBody2D" groups=["Brick"]]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_oeheg")
+script = ExtResource("1_ranap")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -98,7 +98,7 @@ autoplay = "default"
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 z_index = -3
 use_parent_material = true
-texture = ExtResource("4_e62xi")
+texture = ExtResource("4_py6bd")
 offset = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

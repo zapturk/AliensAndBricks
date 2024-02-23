@@ -2,8 +2,10 @@ extends StaticBody2D
 
 @onready var rng = RandomNumberGenerator.new()
 @export var itemBrick := false
+@export var ballBrick := false
 
 var powerup = preload("res://Objs/power_up.tscn")
+var ball = preload("res://Objs/Balls/ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

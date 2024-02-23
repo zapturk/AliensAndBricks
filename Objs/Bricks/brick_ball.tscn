@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://blf4pdey6jjxy"]
+[gd_scene load_steps=12 format=3 uid="uid://b53mn1qpota73"]
 
-[ext_resource type="Script" path="res://Objs/brick.gd" id="1_mxc40"]
-[ext_resource type="Texture2D" uid="uid://syci4d12csom" path="res://Assets/Bricks 8x8/regularBrick.png" id="1_orism"]
-[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_l256n"]
-[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_hfcjb"]
+[ext_resource type="Script" path="res://Objs/Bricks/brick.gd" id="1_1i8ib"]
+[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_0ermt"]
+[ext_resource type="Texture2D" uid="uid://c6t12ubfthxu7" path="res://Assets/Bricks 8x8/BallBrick.png" id="3_j68in"]
+[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_mb048"]
 
 [sub_resource type="Animation" id="Animation_va1ax"]
 length = 0.001
@@ -58,18 +58,18 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ehk7"]
 resource_local_to_scene = true
-shader = ExtResource("2_l256n")
+shader = ExtResource("2_0ermt")
 shader_parameter/sensitivity = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwqpt"]
-atlas = ExtResource("1_orism")
-region = Rect2(48, 8, 16, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqsad"]
+atlas = ExtResource("3_j68in")
+region = Rect2(0, 0, 16, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ph6tn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xwqpt")
+"texture": SubResource("AtlasTexture_bqsad")
 }],
 "loop": true,
 "name": &"default",
@@ -82,7 +82,8 @@ size = Vector2(32, 16)
 [node name="BrickRed" type="StaticBody2D" groups=["Brick"]]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_mxc40")
+script = ExtResource("1_1i8ib")
+ballBrick = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -98,7 +99,7 @@ autoplay = "default"
 [node name="Shadow" type="Sprite2D" parent="AnimatedSprite2D"]
 z_index = -3
 use_parent_material = true
-texture = ExtResource("4_hfcjb")
+texture = ExtResource("4_mb048")
 offset = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

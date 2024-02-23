@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://od1tnvx5870h"]
 
-[ext_resource type="Script" path="res://Objs/ball_manager.gd" id="1_sxy6a"]
+[ext_resource type="Script" path="res://Objs/Balls/ball_manager.gd" id="1_sxy6a"]
 
 [node name="BallManager" type="Node2D"]
 script = ExtResource("1_sxy6a")

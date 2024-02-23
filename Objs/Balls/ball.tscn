@@ -1,0 +1,126 @@
+[gd_scene load_steps=20 format=3 uid="uid://bntmjfvdsncex"]
+
+[ext_resource type="Script" path="res://Objs/Balls/ball.gd" id="1_nf0fv"]
+[ext_resource type="Texture2D" uid="uid://dhc6smqi2twe7" path="res://Assets/Player/Balls/Fire Ball/fire_ball_1.png" id="2_kfcvg"]
+[ext_resource type="Texture2D" uid="uid://7i6t6e8nw8g3" path="res://Assets/Player/Balls/Fire Ball/fire_ball_2.png" id="3_fn43h"]
+[ext_resource type="Texture2D" uid="uid://uqat30pilmq" path="res://Assets/Player/Balls/Fire Ball/fire_ball_3.png" id="4_qujhq"]
+[ext_resource type="Texture2D" uid="uid://bhtlrlurv6ruq" path="res://Assets/Player/Balls/Ice Ball/ice_ball_1.png" id="5_73qnb"]
+[ext_resource type="Texture2D" uid="uid://bmvjq3ju6ym7i" path="res://Assets/Player/Balls/Ice Ball/ice_ball_2.png" id="6_dreff"]
+[ext_resource type="Texture2D" uid="uid://v7i11j4kq0io" path="res://Assets/Player/Balls/Ice Ball/ice_ball_3.png" id="7_8p6r0"]
+[ext_resource type="Texture2D" uid="uid://ben1ybbjgxv3s" path="res://Assets/Player/Balls/Ice Ball/ice_ball_4.png" id="8_ck6wm"]
+[ext_resource type="Texture2D" uid="uid://dpj8ypx75725m" path="res://Assets/Player/Balls/Ice Ball/ice_ball_5.png" id="9_f06uk"]
+[ext_resource type="Texture2D" uid="uid://cj5oq5ot23msl" path="res://Assets/Player/Balls/ball_small_normal_big.png" id="10_i547y"]
+[ext_resource type="Texture2D" uid="uid://cxho31aloaxr6" path="res://Assets/Player/Balls/Slime Ball/slime_ball_1.png" id="11_nmm0u"]
+[ext_resource type="Texture2D" uid="uid://bdvmenxmmfpmq" path="res://Assets/Player/Balls/Slime Ball/slime_ball_2.png" id="12_64v02"]
+[ext_resource type="Texture2D" uid="uid://xw8bq6a08u4g" path="res://Assets/Player/Balls/Slime Ball/slime_ball_3.png" id="13_lsryj"]
+[ext_resource type="Texture2D" uid="uid://dcr44x1wxlq52" path="res://Assets/Player/Balls/Slime Ball/slime_ball_4.png" id="14_nep4r"]
+[ext_resource type="Shader" path="res://Shader/drop_shadow.gdshader" id="15_nnnx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4pb3"]
+atlas = ExtResource("10_i547y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs5j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kfcvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fn43h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qujhq")
+}],
+"loop": true,
+"name": &"FileBall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_73qnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dreff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8p6r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ck6wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f06uk")
+}],
+"loop": true,
+"name": &"IceBall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4pb3")
+}],
+"loop": true,
+"name": &"RegularNormal",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_nmm0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_64v02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lsryj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nep4r")
+}],
+"loop": true,
+"name": &"slime",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe5ys"]
+shader = ExtResource("15_nnnx1")
+shader_parameter/background_color = Color(0, 0, 0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.352941)
+shader_parameter/offset_in_pixels = Vector2(2.08165e-12, 2.08165e-12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omj60"]
+radius = 6.5192
+
+[node name="Ball" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 23
+script = ExtResource("1_nf0fv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bs5j3")
+animation = &"RegularNormal"
+autoplay = "RegularNormal"
+
+[node name="shadow" type="Sprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+material = SubResource("ShaderMaterial_fe5ys")
+texture = ExtResource("10_i547y")
+offset = Vector2(2, 2)
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_omj60")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.7, 0.7)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
