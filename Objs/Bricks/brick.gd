@@ -18,13 +18,22 @@ func _process(_delta):
 
 func OnHit():
 	# play shader
-	$AnimationPlayer.play("dissolving")
+	if ballBrick:
+		var newBall : Ball = ball.instantiate() 
+		newBall.position = position
+		newBall.inPlay = true
+		get_parent().get_parent().get_node("BallManager").add_child(newBall)
+		
+		queue_free()
+	else:
+		# Play dissoving
+		$AnimationPlayer.play("dissolving")
 	
-	# deterim if it will drop a power up
-	if rng.randi_range(1, 10) == 10 || itemBrick:
-		var newPowerup = powerup.instantiate()
-		newPowerup.position = position
-		get_parent().get_parent().add_child(newPowerup)
+		# deterim if it will drop a power up
+		if rng.randi_range(1, 10) == 10 || itemBrick:
+			var newPowerup = powerup.instantiate()
+			newPowerup.position = position
+			get_parent().get_parent().add_child(newPowerup)
 	
 func starFree():
 	# Destroy brick

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_file("*.tscn") var NextLevel : String
-@export_file("*.tscn") var MainMenu : String
+@export_file("*.tscn") var MainMenu : String 
 @export var LevelNumber := "0"
 @export var Name := "Debug"
 
@@ -33,8 +33,9 @@ func _on_ball_manager_no_balls_left():
 func _on_brick_manager_no_bricks_left():
 	# show level compealte
 	pauseEverything()
-	$NextLevel.add_theme_icon_override("close", Texture2D.new()) 
-	$NextLevel.show()
+	#$NextLevel.add_theme_icon_override("close", Texture2D.new()) 
+	#$NextLevel.show()
+	_on_next_level_confirmed()
 
 func multiball():
 	$BallManager.multiball()
