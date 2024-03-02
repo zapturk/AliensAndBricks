@@ -20,6 +20,7 @@ config/windows_native_icon="res://Assets/HUD/alien_icon.ico"
 
 [autoload]
 
+ScreenFx="*res://Engine/screen_fx.tscn"
 SceneLoader="*res://App/Scripts/SceneLoader.gd"
 RuntimeLogger="*res://Extras/Scripts/RuntimeLogger.gd"
 Global="*res://Scripts/Global.gd"
