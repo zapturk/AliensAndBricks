@@ -7,13 +7,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await ScreenFx.FadeFromBlack()
 	Global.CurrentLevel = LevelNumber
 	Global.LevelName = Name
+	await ScreenFx.FadeFromBlack()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Input.is_key_pressed(KEY_N):
+		_on_next_level_confirmed()
 
 
 func _on_ball_manager_no_balls_left():
