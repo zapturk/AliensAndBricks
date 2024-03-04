@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_file("*.tscn") var NextLevel : String
-@export_file("*.tscn") var MainMenu : String 
+@export_file("*.tscn") var MainMenu : String = "res://App/Scenes/Menus/MainMenu/MainMenu.tscn"
 @export var LevelNumber := "0"
 @export var Name := "Debug"
 

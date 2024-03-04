@@ -89,6 +89,7 @@ func _ready():
 	_setup_play()
 	animation_state_machine = $MenuAnimationTree.get("parameters/playback")
 	%PlayButton.grab_focus()
+	ScreenFx.FadeFromBlack()
 	
 
 func _on_play_button_pressed():

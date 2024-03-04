@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rlnsfsctgck6"]
+
+[ext_resource type="Texture2D" uid="uid://r33ohabpiauc" path="res://Assets/your-logo-here-dark.png" id="1_gomvo"]
+
+[node name="SplashScreen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gomvo")
+centered = false
