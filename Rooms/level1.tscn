@@ -865,7 +865,6 @@ sources/3 = SubResource("TileSetAtlasSource_g7p42")
 [node name="level1" type="Node2D"]
 script = ExtResource("1_bntr5")
 NextLevel = "res://Rooms/level2.tscn"
-MainMenu = "res://App/Scenes/Menus/MainMenu/MainMenu.tscn"
 LevelNumber = "1"
 Name = "Classic"
 

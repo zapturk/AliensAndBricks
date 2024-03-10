@@ -919,7 +919,7 @@ sources/4 = SubResource("TileSetAtlasSource_s2mwr")
 
 [node name="level7" type="Node2D"]
 script = ExtResource("1_ngltv")
-NextLevel = "res://App/Scenes/Menus/MainMenu/MainMenu.tscn"
+NextLevel = "res://Rooms/level8.tscn"
 LevelNumber = "7"
 Name = "Hearts"
 
