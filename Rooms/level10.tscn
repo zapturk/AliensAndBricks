@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://tv4adloih00e"]
+[gd_scene load_steps=26 format=3 uid="uid://tv4adloih00e"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_cv53w"]
 [ext_resource type="Texture2D" uid="uid://mq32ilk1isqn" path="res://Assets/Background/background1.png" id="2_10ln0"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://tt74dt63vaf2" path="res://Objs/in_game_ui.tscn" id="15_io2a2"]
 [ext_resource type="Script" path="res://App/Scripts/PauseMenuController.gd" id="16_kw3ff"]
 [ext_resource type="PackedScene" uid="uid://cdwvtbtwmrqbn" path="res://App/Scenes/Menus/PauseMenu/PauseMenu.tscn" id="17_ytrch"]
+[ext_resource type="PackedScene" uid="uid://qp5b5nn3ntvx" path="res://Objs/alien.tscn" id="19_pd4t0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxo7f"]
 texture = ExtResource("2_10ln0")
@@ -1216,6 +1217,9 @@ mouse_passthrough = true
 ok_button_text = "Main Menu"
 dialog_text = "Game Over."
 dialog_close_on_escape = false
+
+[node name="Alien" parent="." instance=ExtResource("19_pd4t0")]
+position = Vector2(72, 80)
 
 [connection signal="NoBallsLeft" from="BallManager" to="." method="_on_ball_manager_no_balls_left"]
 [connection signal="NoBricksLeft" from="BrickManager" to="." method="_on_brick_manager_no_bricks_left"]
