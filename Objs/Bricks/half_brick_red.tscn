@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdedxyhkl1n0y"]
+[gd_scene load_steps=12 format=3 uid="uid://o6cha5fwwfx7"]
 
-[ext_resource type="Script" path="res://Objs/Bricks/HalfBrick.gd" id="1_bcll3"]
-[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_m30b2"]
-[ext_resource type="Texture2D" uid="uid://sle75f37q4wy" path="res://Assets/Bricks 8x8/halfBrick.png" id="3_xrks7"]
-[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_b67rk"]
+[ext_resource type="Script" path="res://Objs/Bricks/HalfBrick.gd" id="1_n8chf"]
+[ext_resource type="Shader" path="res://Shader/SimpleDissolve.gdshader" id="2_fd546"]
+[ext_resource type="Texture2D" uid="uid://sle75f37q4wy" path="res://Assets/Bricks 8x8/halfBrick.png" id="3_pramn"]
+[ext_resource type="Texture2D" uid="uid://2si64oyed14" path="res://Assets/Bricks 8x8/BrickShadow.png" id="4_e88bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ox3"]
 size = Vector2(32, 8)
@@ -61,18 +61,18 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ehk7"]
 resource_local_to_scene = true
-shader = ExtResource("2_m30b2")
+shader = ExtResource("2_fd546")
 shader_parameter/sensitivity = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1bnx"]
-atlas = ExtResource("3_xrks7")
-region = Rect2(0, 0, 16, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_36odx"]
+atlas = ExtResource("3_pramn")
+region = Rect2(48, 8, 16, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ph6tn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h1bnx")
+"texture": SubResource("AtlasTexture_36odx")
 }],
 "loop": true,
 "name": &"default",
@@ -82,7 +82,7 @@ animations = [{
 [node name="HalfBrickBlue" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Brick"]]
-script = ExtResource("1_bcll3")
+script = ExtResource("1_n8chf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -104,7 +104,7 @@ autoplay = "default"
 [node name="Shadow" type="Sprite2D" parent="StaticBody2D/AnimatedSprite2D"]
 z_index = -3
 use_parent_material = true
-texture = ExtResource("4_b67rk")
+texture = ExtResource("4_e88bh")
 offset = Vector2(2, 2)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
