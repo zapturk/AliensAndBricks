@@ -79,6 +79,7 @@ move_right={
 2d_physics/layer_4="Ball"
 2d_physics/layer_5="OutOfBounds"
 2d_physics/layer_6="PowerUp"
+2d_physics/layer_7="Alien"
 
 [rendering]
 

@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=3 uid="uid://qp5b5nn3ntvx"]
+
+[ext_resource type="Script" path="res://Objs/alien.gd" id="1_sgiql"]
+[ext_resource type="Texture2D" uid="uid://cxsb50h0smrrf" path="res://Assets/Enemies and Objects/Aliens/Enemy 3/enemy_3_demange_1.png" id="2_muanh"]
+[ext_resource type="Texture2D" uid="uid://cdtvlr7wucpsi" path="res://Assets/Enemies and Objects/Aliens/Enemy 3/enemy_3_1.png" id="2_t2ktw"]
+[ext_resource type="Texture2D" uid="uid://b5pe0qvlrdnpr" path="res://Assets/Enemies and Objects/Aliens/Enemy 3/enemy_3_demange_2.png" id="3_kg0ry"]
+[ext_resource type="Texture2D" uid="uid://byjfjmtelwdhr" path="res://Assets/Enemies and Objects/Aliens/Enemy 3/enemy_3_2.png" id="3_x7xan"]
+[ext_resource type="Texture2D" uid="uid://boqels17ax7xc" path="res://Assets/Effects/Explosion/explosion_1.png" id="4_pfpl0"]
+[ext_resource type="Texture2D" uid="uid://by14mqwqv12w0" path="res://Assets/Effects/Explosion/explosion_2.png" id="5_g2wcg"]
+[ext_resource type="Texture2D" uid="uid://djlajhlrtdam0" path="res://Assets/Effects/Explosion/explosion_3.png" id="6_c271j"]
+[ext_resource type="Texture2D" uid="uid://qjneyycj805i" path="res://Assets/Effects/Explosion/explosion_4.png" id="7_slxry"]
+[ext_resource type="Texture2D" uid="uid://bm377xwqsy60" path="res://Assets/Effects/Explosion/explosion_5.png" id="8_kgiai"]
+[ext_resource type="Texture2D" uid="uid://cu3g47k4fas81" path="res://Assets/Effects/Explosion/explosion_6.png" id="9_bojo5"]
+[ext_resource type="Texture2D" uid="uid://dh560neavw6e1" path="res://Assets/Effects/Explosion/explosion_7.png" id="10_34a1r"]
+[ext_resource type="Texture2D" uid="uid://d3tca1u225hmw" path="res://Assets/Effects/Explosion/explosion_8.png" id="11_ivx3g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fehkk"]
+atlas = ExtResource("2_t2ktw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnkyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_muanh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kg0ry")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pfpl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g2wcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c271j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_slxry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kgiai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bojo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34a1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ivx3g")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fehkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x7xan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mg8en"]
+radius = 16.0
+
+[node name="AlienOrange" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 15
+script = ExtResource("1_sgiql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fnkyv")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_mg8en")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -96,7 +96,7 @@ shader_parameter/offset_in_pixels = Vector2(2.08165e-12, 2.08165e-12)
 [sub_resource type="CircleShape2D" id="CircleShape2D_omj60"]
 radius = 6.5192
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="CharacterBody2D" groups=["Ball"]]
 collision_layer = 8
 collision_mask = 23
 script = ExtResource("1_nf0fv")
