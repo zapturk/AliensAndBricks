@@ -39,6 +39,8 @@ func _physics_process(delta):
 				Sound.play(Def.SFX.BrickHit)
 				velocity = velocity.bounce(collisionObj.get_normal())
 				objHit.OnHit()
+			elif objHit.is_in_group("Alien"):
+				velocity = velocity.bounce(collisionObj.get_normal())
 			else:
 				velocity = velocity.bounce(collisionObj.get_normal())
 	else:

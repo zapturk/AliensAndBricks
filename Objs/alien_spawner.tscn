@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqsh4nfivy1fp" path="res://Assets/Enemies and Objects/Spawner.png" id="1_mdt15"]
 [ext_resource type="Script" path="res://Objs/alien_spawner.gd" id="1_w2fj2"]
-[ext_resource type="Texture2D" uid="uid://r752xtfhtx3k" path="res://Assets/Enemies and Objects/Aliens/Enemy 2/enemy_2_1.png" id="2_2flme"]
+[ext_resource type="Texture2D" uid="uid://byjfjmtelwdhr" path="res://Assets/Enemies and Objects/Aliens/Enemy 3/enemy_3_2.png" id="3_2rsse"]
 
 [sub_resource type="Animation" id="Animation_y312j"]
 length = 0.001
@@ -84,7 +84,7 @@ size = Vector2(48, 16)
 
 [sub_resource type="Curve2D" id="Curve2D_2egpf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, -24, 0, 0, 0, 0, 2.08165e-12, 24)
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, -24, 0, 0, 0, 0, 0, 24)
 }
 point_count = 2
 
@@ -115,10 +115,11 @@ curve = SubResource("Curve2D_2egpf")
 position = Vector2(2.08165e-12, -24)
 rotation = 1.5708
 
-[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+[node name="TempSpr" type="Sprite2D" parent="Path2D/PathFollow2D"]
+unique_name_in_owner = true
 position = Vector2(0, 2.10321e-12)
 rotation = -1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("2_2flme")
+texture = ExtResource("3_2rsse")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

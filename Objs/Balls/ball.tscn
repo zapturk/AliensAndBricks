@@ -98,7 +98,7 @@ radius = 6.5192
 
 [node name="Ball" type="CharacterBody2D" groups=["Ball"]]
 collision_layer = 8
-collision_mask = 23
+collision_mask = 87
 script = ExtResource("1_nf0fv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
