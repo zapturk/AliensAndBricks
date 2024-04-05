@@ -39,8 +39,21 @@ size_flags_horizontal = 3
 size_flags_vertical = 5
 bbcode_enabled = true
 text = "[center]
-[font_size=48]Collaborators[/font_size]
+[font_size=48]Designer/Devloper[/font_size]
+Scott McKeefer [url=https://twitter.com/thezapturk]Zapturk[/url]  
 
+[font_size=48]Art Assets[/font_size]
+
+[font_size=48]Sound Assets[/font_size]
+[font_size=32]Track: Future Zone[/font_size]
+Joel Steudler: [url=www.patreon.com/joelsteudler]Patreon[/url]  
+
+[font_size=48]Testers[/font_size]
+
+[font_size=48]Spechial Thanks[/font_size]
+Haley, Aurelius, & Libra Bits
+
+[font_size=48]Collaborators[/font_size]
 [font_size=32]Godot Game Template[/font_size]
 Author: [url=https://github.com/Maaack]Marek Belski[/url]  
 Source: [url=https://github.com/Maaack/Godot-Game-Template]github: Godot-Game-Template[/url]  

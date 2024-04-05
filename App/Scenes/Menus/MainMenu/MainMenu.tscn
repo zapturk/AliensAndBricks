@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://r02xie8pn6nl" path="res://Assets/Background/Pipes.png" id="5_3uo3v"]
 [ext_resource type="Script" path="res://App/Scripts/UISoundController.gd" id="6_bs342"]
 [ext_resource type="PackedScene" uid="uid://bntmjfvdsncex" path="res://Objs/Balls/ball.tscn" id="6_txl05"]
-[ext_resource type="AudioStream" uid="uid://carpdfns40043" path="res://Audio/Title.wav" id="10_wmcm8"]
+[ext_resource type="AudioStream" uid="uid://carpdfns40043" path="res://Audio/Music/Title.wav" id="10_wmcm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yabtq"]
 texture = ExtResource("4_58gan")
@@ -769,6 +769,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Play"
 
+[node name="LevelButton" type="Button" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level Select"
+
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
@@ -779,11 +786,9 @@ text = "Options
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons"]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_llr3d")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 32
 text = "Credits"
 
 [node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons"]
@@ -851,8 +856,10 @@ script = ExtResource("6_bs342")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_wmcm8")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/LevelButton" to="." method="_on_level_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MenuMargin/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]

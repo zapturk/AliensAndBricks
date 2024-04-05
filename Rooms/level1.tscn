@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://nu07sdgisar5"]
+[gd_scene load_steps=23 format=3 uid="uid://nu07sdgisar5"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_bntr5"]
 [ext_resource type="Texture2D" uid="uid://mq32ilk1isqn" path="res://Assets/Background/background1.png" id="2_4iskj"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dsicl8lmbdebt" path="res://Objs/Bricks/brick_purple.tscn" id="13_u38yg"]
 [ext_resource type="PackedScene" uid="uid://bkowve1dx58r3" path="res://Objs/Bricks/brick_green.tscn" id="14_fjmmi"]
 [ext_resource type="PackedScene" uid="uid://cik1nkojfugx8" path="res://Objs/Bricks/brick_blue.tscn" id="15_ta25q"]
+[ext_resource type="AudioStream" uid="uid://bt1kk6tkdkn3m" path="res://Audio/Music/Action_-_Future_Zone.ogg" id="17_gx574"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxo7f"]
 texture = ExtResource("2_4iskj")
@@ -1092,6 +1093,11 @@ mouse_passthrough = true
 ok_button_text = "Main Menu"
 dialog_text = "Game Over."
 dialog_close_on_escape = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_gx574")
+autoplay = true
+bus = &"Music"
 
 [connection signal="NoBallsLeft" from="BallManager" to="." method="_on_ball_manager_no_balls_left"]
 [connection signal="NoBricksLeft" from="BrickManager" to="." method="_on_brick_manager_no_bricks_left"]

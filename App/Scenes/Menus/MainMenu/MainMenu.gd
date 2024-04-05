@@ -4,6 +4,7 @@ extends Control
 @export_file("*.tscn") var game_scene_path : String
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
+@export var level_select_packed_scene : PackedScene
 @export var version_name: String = "0.0.5"
 
 var animation_state_machine : AnimationNodeStateMachinePlayback
@@ -111,3 +112,7 @@ func _on_credits_end_reached():
 
 func _on_back_button_pressed():
 	_close_sub_menu()
+
+
+func _on_level_button_pressed():
+	pass # Replace with function body.
