@@ -2,14 +2,15 @@ extends Control
 
 
 @export_file("*.tscn") var game_scene_path : String
+@export var level_packed_scene : PackedScene
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
-@export var level_select_packed_scene : PackedScene
 @export var version_name: String = "0.0.5"
 
 var animation_state_machine : AnimationNodeStateMachinePlayback
 var options_scene
 var credits_scene
+var level_scene
 var sub_menu
 
 func load_scene(scene_path : String):
@@ -71,6 +72,14 @@ func _setup_options():
 		options_scene = options_packed_scene.instantiate()
 		options_scene.hide()
 		%OptionsContainer.call_deferred("add_child", options_scene)
+		
+func _setup_levels():
+	if level_packed_scene == null:
+		%LevelButton.hide()
+	else:
+		level_scene= level_packed_scene.instantiate()
+		level_scene.hide()
+		%LevelContainer.call_deferred("add_child", level_scene)
 
 func _setup_credits():
 	if credits_packed_scene == null:
@@ -85,6 +94,7 @@ func _setup_credits():
 func _ready():
 	_setup_for_web()
 	_setup_version_name()
+	_setup_levels()
 	_setup_options()
 	_setup_credits()
 	_setup_play()
@@ -95,6 +105,10 @@ func _ready():
 
 func _on_play_button_pressed():
 	play_game()
+
+func _on_level_button_pressed():
+	_open_sub_menu(level_scene)
+
 
 func _on_options_button_pressed():
 	_open_sub_menu(options_scene)
@@ -113,6 +127,3 @@ func _on_credits_end_reached():
 func _on_back_button_pressed():
 	_close_sub_menu()
 
-
-func _on_level_button_pressed():
-	pass # Replace with function body.

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=29 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://App/Scenes/Menus/MainMenu/MainMenu.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dofdda6rbkd0d" path="res://Rooms/Level Select/level_select.tscn" id="2_dhml3"]
 [ext_resource type="PackedScene" uid="uid://bvwl11s2p0hd" path="res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn" id="2_ewwbc"]
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://App/Scenes/Credits/Credits.tscn" id="3_lcwf5"]
 [ext_resource type="Texture2D" uid="uid://mq32ilk1isqn" path="res://Assets/Background/background1.png" id="4_58gan"]
@@ -648,6 +649,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
 game_scene_path = "res://Rooms/level1.tscn"
+level_packed_scene = ExtResource("2_dhml3")
 options_packed_scene = ExtResource("2_ewwbc")
 credits_packed_scene = ExtResource("3_lcwf5")
 
@@ -797,6 +799,11 @@ custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="LevelContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 640.0
 
 [node name="OptionsContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
