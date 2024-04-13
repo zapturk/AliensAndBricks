@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://schdt036heeh"]
+
+[ext_resource type="PackedScene" uid="uid://c4stbwm60ivkg" path="res://Rooms/Level Select/level_box.tscn" id="1_k51w5"]
+
+[node name="LevelGrid" type="GridContainer"]
+columns = 5
+
+[node name="LevelBox" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+locked = false
+
+[node name="LevelBox2" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+locked = false
+level_num = 2
+
+[node name="LevelBox3" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox4" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox5" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox6" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox7" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox8" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox9" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox10" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox11" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox12" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox13" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox14" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
+
+[node name="LevelBox15" parent="." instance=ExtResource("1_k51w5")]
+layout_mode = 2
