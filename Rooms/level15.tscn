@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bwtvaxtfk03ux"]
+[gd_scene load_steps=24 format=3 uid="uid://bwtvaxtfk03ux"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_j5s6a"]
 [ext_resource type="Texture2D" uid="uid://mq32ilk1isqn" path="res://Assets/Background/background1.png" id="2_6g2ay"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bcvoqv3sppk5p" path="res://Objs/player.tscn" id="12_841hi"]
 [ext_resource type="PackedScene" uid="uid://bkowve1dx58r3" path="res://Objs/Bricks/brick_green.tscn" id="12_liead"]
 [ext_resource type="PackedScene" uid="uid://tt74dt63vaf2" path="res://Objs/in_game_ui.tscn" id="13_7i7f7"]
-[ext_resource type="PackedScene" uid="uid://bsmp6e0bfplc6" path="res://Objs/Bricks/brick_gray.tscn" id="13_s3vs2"]
 [ext_resource type="Script" path="res://App/Scripts/PauseMenuController.gd" id="14_g8qxw"]
 [ext_resource type="PackedScene" uid="uid://cdwvtbtwmrqbn" path="res://App/Scenes/Menus/PauseMenu/PauseMenu.tscn" id="15_oh2dh"]
 
@@ -919,7 +918,7 @@ sources/4 = SubResource("TileSetAtlasSource_s2mwr")
 
 [node name="level15" type="Node2D"]
 script = ExtResource("1_j5s6a")
-NextLevel = "res://Rooms/level1.tscn"
+NextLevel = "res://Rooms/level16.tscn"
 LevelNumber = "15"
 Name = "Cherry"
 
@@ -957,16 +956,13 @@ position = Vector2(352, 184)
 position = Vector2(320, 216)
 
 [node name="BrickItem2" parent="BrickManager" instance=ExtResource("10_do1pn")]
-position = Vector2(224, 72)
+position = Vector2(256, 72)
 
 [node name="BrickItem3" parent="BrickManager" instance=ExtResource("10_do1pn")]
-position = Vector2(352, 72)
+position = Vector2(320, 72)
 
 [node name="BrickGreen3" parent="BrickManager" instance=ExtResource("12_liead")]
 position = Vector2(288, 72)
-
-[node name="BrickGreen8" parent="BrickManager" instance=ExtResource("12_liead")]
-position = Vector2(320, 72)
 
 [node name="BrickGreen10" parent="BrickManager" instance=ExtResource("12_liead")]
 position = Vector2(224, 120)
@@ -986,9 +982,6 @@ position = Vector2(288, 104)
 [node name="BrickGreen13" parent="BrickManager" instance=ExtResource("12_liead")]
 position = Vector2(288, 88)
 
-[node name="BrickGreen17" parent="BrickManager" instance=ExtResource("12_liead")]
-position = Vector2(256, 72)
-
 [node name="BrickGreen14" parent="BrickManager" instance=ExtResource("12_liead")]
 position = Vector2(288, 120)
 
@@ -1003,9 +996,6 @@ position = Vector2(256, 200)
 
 [node name="Brick54" parent="BrickManager" instance=ExtResource("9_nguw2")]
 position = Vector2(256, 184)
-
-[node name="BrickGray" parent="BrickManager" instance=ExtResource("13_s3vs2")]
-position = Vector2(288, 184)
 
 [node name="Brick47" parent="BrickManager" instance=ExtResource("9_nguw2")]
 position = Vector2(288, 200)
@@ -1069,6 +1059,9 @@ position = Vector2(160, 136)
 
 [node name="BrickRed" parent="BrickManager" instance=ExtResource("10_te6m4")]
 position = Vector2(160, 152)
+
+[node name="BrickRed2" parent="BrickManager" instance=ExtResource("10_te6m4")]
+position = Vector2(288, 184)
 
 [node name="Player" parent="." instance=ExtResource("12_841hi")]
 unique_name_in_owner = true

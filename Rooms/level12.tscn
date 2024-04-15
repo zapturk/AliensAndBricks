@@ -921,7 +921,7 @@ sources/4 = SubResource("TileSetAtlasSource_s2mwr")
 
 [node name="Level12" type="Node2D"]
 script = ExtResource("1_xbgem")
-NextLevel = "res://Rooms/level1.tscn"
+NextLevel = "res://Rooms/level13.tscn"
 LevelNumber = "12"
 Name = "Gamepad"
 

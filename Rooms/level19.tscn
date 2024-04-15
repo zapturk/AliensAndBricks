@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6nmm470imdce"]
+[gd_scene load_steps=23 format=3 uid="uid://6nmm470imdce"]
 
 [ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_ry18w"]
 [ext_resource type="Texture2D" uid="uid://mq32ilk1isqn" path="res://Assets/Background/background1.png" id="2_gaxme"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://od1tnvx5870h" path="res://Objs/Balls/ball_manager.tscn" id="7_o1f1a"]
 [ext_resource type="PackedScene" uid="uid://bsw03yibphqcw" path="res://Objs/Bricks/brick_manager.tscn" id="8_ll8bc"]
 [ext_resource type="PackedScene" uid="uid://blf4pdey6jjxy" path="res://Objs/Bricks/brick_red.tscn" id="9_32o2b"]
+[ext_resource type="PackedScene" uid="uid://cik1nkojfugx8" path="res://Objs/Bricks/brick_blue.tscn" id="9_mhw4c"]
+[ext_resource type="PackedScene" uid="uid://dx1tsxb1fiaqq" path="res://Objs/Bricks/brick_yellow.tscn" id="10_v23nv"]
+[ext_resource type="PackedScene" uid="uid://o6cha5fwwfx7" path="res://Objs/Bricks/half_brick_red.tscn" id="11_7np5a"]
 [ext_resource type="PackedScene" uid="uid://bcvoqv3sppk5p" path="res://Objs/player.tscn" id="11_g4p1f"]
 [ext_resource type="PackedScene" uid="uid://tt74dt63vaf2" path="res://Objs/in_game_ui.tscn" id="12_q6w0g"]
 [ext_resource type="Script" path="res://App/Scripts/PauseMenuController.gd" id="13_fkly5"]
@@ -914,9 +917,9 @@ sources/4 = SubResource("TileSetAtlasSource_s2mwr")
 
 [node name="level19" type="Node2D"]
 script = ExtResource("1_ry18w")
-NextLevel = "res://Rooms/level1.tscn"
+NextLevel = "res://Rooms/level20.tscn"
 LevelNumber = "19"
-Name = "Taurus"
+Name = "Time"
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -933,83 +936,191 @@ layer_1/tile_data = PackedInt32Array(2883586, 262146, 5, 2818050, 262146, 5, 275
 
 [node name="BrickManager" parent="." instance=ExtResource("8_ll8bc")]
 
-[node name="Brick15" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickBlue" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(192, 184)
+
+[node name="BrickBlue12" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(224, 168)
+
+[node name="BrickBlue2" parent="BrickManager" instance=ExtResource("9_mhw4c")]
 position = Vector2(224, 136)
 
-[node name="Brick26" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 168)
-
-[node name="Brick27" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(224, 248)
-
-[node name="Brick28" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(192, 152)
-
-[node name="Brick32" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(320, 152)
-
-[node name="Brick33" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(256, 136)
-
-[node name="Brick34" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 184)
-
-[node name="Brick35" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickBlue11" parent="BrickManager" instance=ExtResource("9_mhw4c")]
 position = Vector2(288, 136)
 
-[node name="Brick29" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 104)
+[node name="BrickBlue13" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(288, 152)
 
-[node name="Brick30" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 216)
+[node name="BrickBlue14" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(224, 152)
 
-[node name="Brick31" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 184)
-
-[node name="Brick36" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 200)
-
-[node name="Brick37" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 216)
-
-[node name="Brick38" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(192, 232)
-
-[node name="Brick39" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(256, 248)
-
-[node name="Brick16" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 104)
-
-[node name="Brick17" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 72)
-
-[node name="Brick40" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 72)
-
-[node name="Brick19" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(160, 88)
-
-[node name="Brick20" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickBlue7" parent="BrickManager" instance=ExtResource("9_mhw4c")]
 position = Vector2(192, 120)
 
-[node name="Brick21" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickBlue8" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 104)
+
+[node name="BrickBlue15" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 88)
+
+[node name="BrickBlue16" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 72)
+
+[node name="BrickBlue9" parent="BrickManager" instance=ExtResource("9_mhw4c")]
 position = Vector2(320, 120)
 
-[node name="Brick18" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickBlue10" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(352, 104)
+
+[node name="BrickBlue17" parent="BrickManager" instance=ExtResource("9_mhw4c")]
 position = Vector2(352, 88)
 
-[node name="Brick22" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 168)
+[node name="BrickBlue18" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(352, 72)
 
-[node name="Brick23" parent="BrickManager" instance=ExtResource("9_32o2b")]
-position = Vector2(352, 200)
+[node name="BrickBlue3" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(320, 184)
 
-[node name="Brick24" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="BrickGray" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 152)
+
+[node name="BrickGray2" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 136)
+
+[node name="BrickGray3" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(224, 120)
+
+[node name="BrickGray4" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 120)
+
+[node name="BrickGray5" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(288, 120)
+
+[node name="BrickGray6" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(192, 104)
+
+[node name="BrickGray7" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(224, 104)
+
+[node name="BrickGray8" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(288, 104)
+
+[node name="BrickGray9" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(320, 104)
+
+[node name="BrickGray10" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(320, 88)
+
+[node name="BrickGray11" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(192, 88)
+
+[node name="BrickGray12" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 168)
+
+[node name="BrickGray13" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 184)
+
+[node name="BrickGray14" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 200)
+
+[node name="BrickGray15" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 216)
+
+[node name="BrickGray16" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(256, 232)
+
+[node name="BrickGray17" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(224, 232)
+
+[node name="BrickGray18" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(224, 216)
+
+[node name="BrickGray19" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(192, 232)
+
+[node name="BrickGray20" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(288, 232)
+
+[node name="BrickGray21" parent="BrickManager" instance=ExtResource("10_v23nv")]
 position = Vector2(320, 232)
 
-[node name="Brick25" parent="BrickManager" instance=ExtResource("9_32o2b")]
+[node name="HalfBrickBlue10" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(160, 248)
+
+[node name="HalfBrickBlue11" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(128, 248)
+
+[node name="HalfBrickBlue12" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(224, 248)
+
+[node name="HalfBrickBlue13" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(192, 248)
+
+[node name="HalfBrickBlue14" parent="BrickManager" instance=ExtResource("11_7np5a")]
 position = Vector2(288, 248)
+
+[node name="HalfBrickBlue15" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(256, 248)
+
+[node name="HalfBrickBlue16" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(352, 248)
+
+[node name="BrickRed10" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(128, 56)
+
+[node name="BrickRed11" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(160, 56)
+
+[node name="BrickRed12" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(192, 56)
+
+[node name="BrickRed13" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(224, 56)
+
+[node name="BrickRed14" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(256, 56)
+
+[node name="BrickRed15" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(288, 56)
+
+[node name="BrickRed16" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(320, 56)
+
+[node name="BrickRed17" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(352, 56)
+
+[node name="BrickRed18" parent="BrickManager" instance=ExtResource("9_32o2b")]
+position = Vector2(384, 56)
+
+[node name="HalfBrickBlue17" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(320, 248)
+
+[node name="HalfBrickBlue18" parent="BrickManager" instance=ExtResource("11_7np5a")]
+position = Vector2(384, 248)
+
+[node name="BrickGray22" parent="BrickManager" instance=ExtResource("10_v23nv")]
+position = Vector2(288, 216)
+
+[node name="BrickBlue5" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(352, 200)
+
+[node name="BrickBlue21" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(352, 216)
+
+[node name="BrickBlue22" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(352, 232)
+
+[node name="BrickBlue6" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(288, 168)
+
+[node name="BrickBlue4" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 216)
+
+[node name="BrickBlue20" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 232)
+
+[node name="BrickBlue19" parent="BrickManager" instance=ExtResource("9_mhw4c")]
+position = Vector2(160, 200)
 
 [node name="Player" parent="." instance=ExtResource("11_g4p1f")]
 unique_name_in_owner = true
