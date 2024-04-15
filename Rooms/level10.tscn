@@ -919,7 +919,7 @@ sources/4 = SubResource("TileSetAtlasSource_s2mwr")
 
 [node name="Level10" type="Node2D"]
 script = ExtResource("1_cv53w")
-NextLevel = "res://Rooms/level1.tscn"
+NextLevel = "res://Rooms/level11.tscn"
 LevelNumber = "10"
 Name = "X"
 
