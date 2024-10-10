@@ -79,7 +79,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ox3"]
 size = Vector2(32, 16)
 
-[node name="BrickGray" type="StaticBody2D" groups=["Brick"]]
+[node name="BrickYellow" type="StaticBody2D" groups=["Brick"]]
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_yp6ac")

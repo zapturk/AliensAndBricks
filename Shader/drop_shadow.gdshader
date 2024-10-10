@@ -7,16 +7,16 @@ uniform vec4 shadow_color : source_color;
 uniform vec2 offset_in_pixels;
 
 void fragment() {
-	
+
 	// Read screen texture
 	vec4 current_color = texture(TEXTURE, UV);
-	
+
 	if (COLOR.a == 0.00)
 		discard;
-	
+
 	if(COLOR != background_color){
 		current_color = shadow_color;
 	}
-	
+
 	COLOR = current_color;
 }
